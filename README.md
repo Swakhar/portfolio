@@ -180,10 +180,6 @@ Example integration with Formspree:
 4. Push to the branch: `git push origin feature/new-feature`
 5. Submit a pull request
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🙏 Acknowledgments
 
 - Next.js team for the amazing framework
