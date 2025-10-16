@@ -195,9 +195,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 If you have any questions or need help with customization, feel free to reach out:
 
-- Email: swakhar.dey@example.com
+- Email: swakhar.me@gmail.com
 - LinkedIn: [linkedin.com/in/swakhar-dey](https://linkedin.com/in/swakhar-dey)
-- GitHub: [github.com/swakhardey](https://github.com/swakhardey)
+- GitHub: [github.com/Swakhar](https://github.com/Swakhar)
 
 ---
 
