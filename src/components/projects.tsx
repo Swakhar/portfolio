@@ -25,7 +25,7 @@ const projects = [
 		liveUrl: 'https://castlumen.com/',
 		featured: true,
 		date: '2025',
-		isBusinessProject: true,
+		isBusinessProject: false,
 	},
 	{
 		id: 2,
