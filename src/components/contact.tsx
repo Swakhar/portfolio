@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
+import { personalInfo } from '@/data/resume-data'
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -81,10 +82,10 @@ export function Contact() {
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <Link
-                    href="mailto:swakhar.me@gmail.com"
+                    href={`mailto:${personalInfo.email}`}
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    swakhar.me@gmail.com
+                    {personalInfo.email}
                   </Link>
                 </div>
               </div>
@@ -96,10 +97,10 @@ export function Contact() {
                 <div>
                   <h4 className="font-medium">Phone</h4>
                   <Link
-                    href="tel:+4917632875065"
+                    href={`tel:${personalInfo.phone}`}
                     className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    +49176-32875065
+                    {personalInfo.phone}
                   </Link>
                 </div>
               </div>
@@ -111,7 +112,7 @@ export function Contact() {
                 <div>
                   <h4 className="font-medium">Location</h4>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Bruchköbel, Germany
+                    {personalInfo.location}
                   </p>
                 </div>
               </div>
@@ -122,7 +123,7 @@ export function Contact() {
               <h4 className="font-medium mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <Link
-                  href="https://github.com/Swakhar"
+                  href={`https://${personalInfo.github}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 card-hover"
@@ -130,7 +131,7 @@ export function Contact() {
                   <Github className="h-6 w-6" />
                 </Link>
                 <Link
-                  href="https://linkedin.com/in/swakhar-dey"
+                  href={`https://${personalInfo.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 card-hover"

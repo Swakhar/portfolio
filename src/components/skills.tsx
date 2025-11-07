@@ -1,42 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const skillCategories = [
-	{
-		title: 'Backend Development',
-		skills: [
-			{ name: 'Ruby on Rails', level: 95 },
-			{ name: 'Laravel/PHP', level: 88 },
-			{ name: 'Python/FastAPI', level: 85 },
-			{ name: 'RESTful APIs', level: 95 },
-			{ name: 'PostgreSQL', level: 90 },
-			{ name: 'Redis', level: 85 }
-		]
-	},
-	{
-		title: 'Frontend Development',
-		skills: [
-			{ name: 'React', level: 92 },
-			{ name: 'Next.js', level: 90 },
-			{ name: 'TypeScript', level: 88 },
-			{ name: 'Vue.js', level: 82 },
-			{ name: 'JavaScript', level: 95 },
-			{ name: 'Tailwind CSS', level: 90 }
-		]
-	},
-	{
-		title: 'DevOps & Cloud',
-		skills: [
-			{ name: 'Docker', level: 85 },
-			{ name: 'Azure', level: 88 },
-			{ name: 'AWS', level: 80 },
-			{ name: 'Heroku', level: 92 },
-			{ name: 'CI/CD', level: 85 },
-			{ name: 'Terraform', level: 78 }
-		]
-	}
-]
+import { skillCategories, additionalSkills } from '@/data/resume-data'
 
 export function Skills() {
 	return (
@@ -125,10 +90,7 @@ export function Skills() {
 						Payment & Integration Expertise
 					</h3>
 					<div className="flex flex-wrap justify-center gap-3 mb-8">
-						{[
-							'Stripe Integration', 'Wirecard', 'AI/ML Integration',
-							'Microservices', 'Event-driven Architecture', 'RSS Processing'
-						].map((skill) => (
+						{additionalSkills.paymentIntegration.map((skill) => (
 							<span
 								key={skill}
 								className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"
@@ -140,10 +102,7 @@ export function Skills() {
 
 					<h3 className="text-2xl font-bold mb-6">Business & Leadership</h3>
 					<div className="flex flex-wrap justify-center gap-3">
-						{[
-							'Technical Leadership', 'Project Management', 'Team Coordination', 'Business Strategy',
-							'Agile/Scrum', 'Architecture Design', 'Code Review', 'Mentoring'
-						].map((skill) => (
+						{additionalSkills.leadership.map((skill) => (
 							<span
 								key={skill}
 								className="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium"

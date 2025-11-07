@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { DownloadResumeButton } from './download-resume-button'
+import { personalInfo } from '@/data/resume-data'
 
 export function Hero() {
   return (
@@ -17,7 +19,7 @@ export function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Hi, I'm{' '}
               <span className="heading-gradient">
-                Swakhar Dey
+                {personalInfo.name}
               </span>
             </h1>
             
@@ -27,7 +29,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto"
             >
-              Full-stack engineer specializing in Ruby on Rails for 9+ years.
+              {personalInfo.title} specializing in Ruby on Rails for 9+ years.
               I transform complex business requirements into clean, maintainable 
               code while exploring the latest in React, Next.js, and cloud architecture.
             </motion.p>
@@ -44,6 +46,7 @@ export function Hero() {
               >
                 View My Work
               </Link>
+              <DownloadResumeButton />
               <Link
                 href="#contact"
                 className="px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white rounded-lg font-medium transition-colors duration-200"
@@ -59,7 +62,7 @@ export function Hero() {
               className="flex items-center justify-center space-x-6 mb-12"
             >
               <Link
-                href="https://github.com/Swakhar"
+                href={`https://${personalInfo.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 card-hover"
@@ -67,7 +70,7 @@ export function Hero() {
                 <Github className="h-6 w-6" />
               </Link>
               <Link
-                href="https://linkedin.com/in/swakhar-dey"
+                href={`https://${personalInfo.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 card-hover"
@@ -75,7 +78,7 @@ export function Hero() {
                 <Linkedin className="h-6 w-6" />
               </Link>
               <Link
-                href="mailto:swakhar.me@gmail.com"
+                href={`mailto:${personalInfo.email}`}
                 className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 card-hover"
               >
                 <Mail className="h-6 w-6" />

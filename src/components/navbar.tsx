@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { Menu, X, Sun, Moon, Monitor } from 'lucide-react'
+import { ResumeButton } from './download-resume-button'
+import { personalInfo } from '@/data/resume-data'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,7 +38,7 @@ export function Navbar() {
       <div className="section-container">
         <div className="flex justify-between items-center py-4">
           <Link href="#home" className="text-2xl font-bold heading-gradient">
-            Swakhar Dey
+            {personalInfo.name}
           </Link>
 
           {/* Desktop Navigation */}
@@ -50,6 +52,9 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
+            
+            {/* Resume Button */}
+            <ResumeButton variant="outline" size="sm" />
             
             {/* Theme Switcher */}
             {mounted && (
@@ -96,6 +101,9 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
+            <div className="mt-4">
+              <ResumeButton variant="primary" size="sm" />
+            </div>
           </div>
         )}
       </div>
