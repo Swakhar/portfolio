@@ -327,6 +327,9 @@ export function ResumePDF() {
             <Link style={[styles.contactItem, styles.link]} src={`https://${pdfPersonalInfo.github}`}>
               {pdfPersonalInfo.github}
             </Link>
+            <Link style={[styles.contactItem, styles.link]} src={`${pdfPersonalInfo.portfolio}`}>
+              {pdfPersonalInfo.portfolio}
+            </Link>
           </View>
         </View>
 
@@ -348,7 +351,7 @@ export function ResumePDF() {
                 {exp.period && <Text>{exp.period}</Text>}
               </View>
               <View style={styles.bulletPoints}>
-                {exp.description.slice(0, 4).map((item, index) => (
+                {exp.description.map((item, index) => (
                   <View key={index} style={styles.bulletPoint}>
                     <Text style={styles.bullet}>•</Text>
                     <Text style={styles.bulletText}>{item}</Text>

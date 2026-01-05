@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown, Briefcase, Github, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { DownloadResumeButton } from './download-resume-button'
 import { personalInfo } from '@/data/resume-data'
@@ -82,6 +82,12 @@ export function Hero() {
                 className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 card-hover"
               >
                 <Mail className="h-6 w-6" />
+              </Link>
+              <Link
+                href={`${personalInfo.portfolio}`}
+                className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 card-hover"
+              >
+                <Briefcase className="h-6 w-6" />
               </Link>
             </motion.div>
           </motion.div>

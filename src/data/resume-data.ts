@@ -9,7 +9,7 @@ export const personalInfo = {
   location: 'Bruchköbel, Germany',
   linkedin: 'linkedin.com/in/swakhar-dey',
   github: 'github.com/Swakhar',
-  portfolio: 'swakhardey.dev',
+  portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
 export const professionalSummary = `Senior Software Engineer with 9+ years of experience building scalable web applications and delivering innovative solutions across diverse industries. Currently serving as a Senior Software Engineer at Finlink GmbH, specializing in Ruby on Rails development for 9.5 years. Expert in full-stack development, cloud architecture, and leading technical teams. Proven track record in transforming complex business requirements into clean, maintainable code while driving innovation in fintech and enterprise solutions.`
@@ -23,7 +23,6 @@ export const experiences = [
     period: 'Sept 2021 - Present',
     description: [
       'Lead technical architecture and project management for a team of 5 engineers, driving end-to-end delivery of complex financing solutions',
-      'Transformed internal financing platform achieving 95% response rate from top-tier German banks through strategic system redesigns',
       'Revolutionized database performance by 50% implementing Redis caching strategies, significantly reducing financing query response times',
       'Architected and deployed multiple microservices from scratch for Europace/Ehyp API integration, handling high-volume financial data processing',
       'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting and compliance',
@@ -81,8 +80,6 @@ export const experiences = [
       'Built comprehensive travel booking platform frontend using React and Redux, integrating complex search and filtering capabilities',
       'Created reusable Ruby gem library for consistent styling across multiple microservices, improving development efficiency',
       'Integrated secure payment processing with Wirecard and Stripe, ensuring PCI compliance and fraud protection',
-      'Built complete dating application from ground up using Ruby backend with jQuery frontend, supporting real-time messaging',
-      'Contributed to major e-commerce platform development serving Swiss market (Nile), handling high-volume product catalogs',
     ],
     technologies: [
       'Ruby',
@@ -179,7 +176,7 @@ export const featuredProjects = [
     id: 1,
     title: 'Castlumen - AI Content Repurposing Platform',
     description:
-      'Co-founded SaaS platform that transforms content across 7 social media formats using AI. Built complete full-stack solution with Python FastAPI backend, Next.js frontend, integrated multiple AI services, Stripe payments, and WordPress publishing automation.',
+      'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Built complete full-stack solution with Python FastAPI backend, Next.js frontend, integrated multiple AI services, Stripe payments, and WordPress publishing automation.',
     technologies: [
       'Next.js',
       'Python',
@@ -189,25 +186,43 @@ export const featuredProjects = [
       'WordPress API',
       'Social Media APIs',
     ],
-    url: 'https://castlumen.com/',
+    url: 'https://castlumen.com',
     date: '2025',
   },
   {
     id: 2,
-    title: 'Mein-IT - IT Services Platform',
+    title: 'Meindokan - Online Grocery Store',
     description:
-      'Partner-founded IT services platform providing comprehensive business solutions. Developed complete ecosystem with Next.js frontend, Laravel backend, and dedicated admin panel. Handles service management, client portals, and business operations.',
+      'CTO and Co-founder of online grocery store platform. Built entire architecture, implemented core parts in backend (Laravel) and frontend (Next.js), and managed remote freelancing team. Developed complete e-commerce solution with real-time inventory, delivery management, payment processing, and customer portal.',
     technologies: [
       'Next.js',
       'Laravel',
       'PHP',
-      'Admin Panel',
-      'Client Portal',
-      'Business Management',
+      'E-Commerce',
+			'Payment Gateway',
+			'Business Management',
     ],
-    url: 'https://mein-it.com/',
+    url: 'https://meindokan.com',
     date: '2025',
   },
+  {
+		id: 3,
+		title: 'QR Ordering System',
+		description:
+			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display with WebSocket updates, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
+		technologies: ['Ruby on Rails', 'Stripe', 'WebSocket', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
+		url: 'https://github.com/Swakhar/qr-ordering',
+		date: '2025',
+	},
+  {
+		id: 4,
+		title: 'OnePager - AI Website Builder',
+		description:
+			'Single page website builder powered by AI with comprehensive editing options. Features AI-powered design commands, screenshot analysis, style transfer, and smart UX/UI suggestions. Includes multiple templates, visual editor with real-time preview, and one-click publishing.',
+		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Supabase'],
+		url: 'https://github.com/Swakhar/onepager-starter',
+		date: '2025',
+	},
 ]
 
 export const education = {

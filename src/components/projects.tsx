@@ -10,7 +10,7 @@ const projects = [
 		id: 1,
 		title: 'Castlumen - AI Content Repurposing Platform',
 		description:
-			'Co-founded SaaS platform that transforms content across 7 social media formats using AI. Built complete full-stack solution with Python FastAPI backend, Next.js frontend, integrated multiple AI services, Stripe payments, and WordPress publishing automation.',
+			'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Built complete full-stack solution with Python FastAPI backend, Next.js frontend, integrated multiple AI services, Stripe payments, and WordPress publishing automation.',
 		image: '/image/castlumen.png',
 		technologies: [
 			'Next.js',
@@ -29,20 +29,20 @@ const projects = [
 	},
 	{
 		id: 2,
-		title: 'Mein-IT - IT Services Platform',
+		title: 'Meindokan - Online Grocery Store',
 		description:
-			'Partner-founded IT services platform providing comprehensive business solutions. Developed complete ecosystem with Next.js frontend, Laravel backend, and dedicated admin panel. Handles service management, client portals, and business operations.',
-		image: '/image/mein-it.png',
+			'CTO and Co-founder of online grocery store platform. Built entire architecture, implemented core parts in backend (Laravel) and frontend (Next.js), and managed remote freelancing team. Developed complete e-commerce solution with real-time inventory, delivery management, payment processing, and customer portal.',
+		image: '/image/meindokan.png',
 		technologies: [
 			'Next.js',
 			'Laravel',
 			'PHP',
-			'Admin Panel',
-			'Client Portal',
+			'E-Commerce',
+			'Payment Gateway',
 			'Business Management',
 		],
 		githubUrl: null,
-		liveUrl: 'https://mein-it.com/',
+		liveUrl: 'https://meindokan.com/',
 		featured: true,
 		date: '2025',
 		isBusinessProject: true,
@@ -51,9 +51,9 @@ const projects = [
 		id: 3,
 		title: 'QR Ordering System',
 		description:
-			'A complete restaurant ordering system with QR code integration. Customers can scan QR codes to view menus, place orders, and make payments. Features real-time order tracking, menu management, and payment processing.',
+			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display with WebSocket updates, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
 		image: '/api/placeholder/400/250',
-		technologies: ['Ruby on Rails', 'QR Code', 'Payment Gateway', 'Real-time'],
+		technologies: ['Ruby on Rails', 'Stripe', 'WebSocket', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
 		githubUrl: 'https://github.com/Swakhar/qr-ordering',
 		liveUrl: null,
 		featured: false,
@@ -61,6 +61,18 @@ const projects = [
 	},
 	{
 		id: 4,
+		title: 'OnePager - AI Website Builder',
+		description:
+			'Single page website builder powered by AI with comprehensive editing options. Features AI-powered design commands, screenshot analysis, style transfer, and smart UX/UI suggestions. Includes multiple templates, visual editor with real-time preview, and one-click publishing.',
+		image: '/api/placeholder/400/250',
+		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Supabase'],
+		githubUrl: 'https://github.com/Swakhar/onepager-starter',
+		liveUrl: null,
+		featured: false,
+		date: '2025',
+	},
+	{
+		id: 5,
 		title: 'Dimensional Shift Deluxe',
 		description:
 			'A 2D platformer game built with Phaser.js featuring multiple dimensions, challenging levels, and smooth gameplay mechanics. Players navigate through different dimensional planes to solve puzzles and overcome obstacles.',
@@ -70,18 +82,6 @@ const projects = [
 		liveUrl: null,
 		featured: false,
 		date: '2025',
-	},
-	{
-		id: 5,
-		title: 'React Widget Library',
-		description:
-			'A reusable React widget component library with customizable UI elements. Provides developers with pre-built, responsive components that can be easily integrated into any React application with minimal configuration.',
-		image: '/api/placeholder/400/250',
-		technologies: ['React', 'Responsive Design'],
-		githubUrl: 'https://github.com/Swakhar/react-widget',
-		liveUrl: null,
-		featured: false,
-		date: '2019',
 	},
 ]
 
