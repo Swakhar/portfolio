@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Software Engineer with 9+ years of experience building scalable web applications and delivering innovative solutions across diverse industries. Currently serving as a Senior Software Engineer at Finlink GmbH, specializing in Ruby on Rails development for 9.5 years. Expert in full-stack development, cloud architecture, and leading technical teams. Proven track record in transforming complex business requirements into clean, maintainable code while driving innovation in fintech and enterprise solutions.`
+export const professionalSummary = `Senior Software Engineer with 9+ years of experience architecting scalable web applications across fintech, e-commerce, and AI-powered SaaS platforms. Currently leading a team of 5 engineers at Finlink GmbH, specializing in Ruby on Rails full-stack development with deep expertise in microservices, cloud infrastructure (Azure, Docker), React, and Next.js — delivering 50%+ database performance gains and 80% workflow automation improvements. Actively integrating modern AI tools and LLM APIs into production systems, bridging strong backend engineering with the latest in AI-assisted development.`
 
 export const experiences = [
   {
@@ -22,14 +22,11 @@ export const experiences = [
     location: 'Remote (Berlin, Germany)',
     period: 'Sept 2021 - Present',
     description: [
-      'Lead technical architecture and project management for a team of 5 engineers, driving end-to-end delivery of complex financing solutions',
-      'Revolutionized database performance by 50% implementing Redis caching strategies, significantly reducing financing query response times',
-      'Architected and deployed multiple microservices from scratch for Europace/Ehyp API integration, handling high-volume financial data processing',
-      'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting and compliance',
-      'Automated loan application workflows using advanced cron job scheduling, reducing manual processing overhead by 80%',
-      'Integrated CI/CD pipelines for microservices deployment using GitHub Actions with containerized Docker solutions and orchestration',
-      'Leveraged Bicep and Terraform for Azure infrastructure provisioning, specifically NAT gateway integration and job container deployment',
-      'Design technical solutions, create detailed JIRA specifications, and coordinate sprint planning while maintaining hands-on development',
+      'Led technical architecture and sprint planning for a team of 5 engineers, owning end-to-end delivery of complex financing platform integrations',
+      'Improved database performance by 50% by implementing Redis caching strategies, cutting financing query response times significantly',
+      'Architected and delivered end-to-end API integrations with Europace and Ehyp, including webhook handling, JSON payload mapping, and event-driven data pipelines — processing high-volume financial transactions in compliance with German regulatory standards',
+      'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting, ensuring regulatory compliance',
+      'Automated loan application workflows via cron job scheduling, reducing manual processing overhead by 80%',
     ],
     technologies: [
       'Ruby on Rails',
@@ -76,10 +73,10 @@ export const experiences = [
     location: 'Dhaka, Bangladesh',
     period: 'Feb 2016 - Oct 2019',
     description: [
+      'Integrated secure payment processing with Wirecard and Stripe across high-volume B2B SaaS platforms, ensuring PCI compliance and fraud protection',
       'Developed robust RESTful APIs serving both web and mobile applications using Ruby, handling thousands of daily transactions',
       'Built comprehensive travel booking platform frontend using React and Redux, integrating complex search and filtering capabilities',
       'Created reusable Ruby gem library for consistent styling across multiple microservices, improving development efficiency',
-      'Integrated secure payment processing with Wirecard and Stripe, ensuring PCI compliance and fraud protection',
     ],
     technologies: [
       'Ruby',
@@ -92,26 +89,6 @@ export const experiences = [
       'PostgreSQL',
     ],
   },
-  {
-    id: 5,
-    title: 'Backend Developer (Contract)',
-    company: 'Jampack',
-    location: 'Remote',
-    period: 'Contract Position',
-    description: [
-      'Developed backend functionality for Ruby on Rails application, focusing on payment processing and event management',
-      'Integrated Stripe payment gateway for seamless transaction processing and subscription management',
-      'Implemented event-driven backend architecture to handle real-time notifications and user interactions',
-      'Resolved critical bugs and enhanced existing features, improving overall application stability and performance',
-    ],
-    technologies: [
-      'Ruby on Rails',
-      'Stripe API',
-      'Event-driven Architecture',
-      'PostgreSQL',
-      'REST APIs',
-    ],
-  },
 ]
 
 export const skillCategories = [
@@ -119,44 +96,62 @@ export const skillCategories = [
     title: 'Backend Development',
     skills: [
       { name: 'Ruby on Rails', level: 95 },
-      { name: 'Laravel/PHP', level: 88 },
-      { name: 'Python/FastAPI', level: 85 },
+      { name: 'Python / FastAPI', level: 85 },
       { name: 'RESTful APIs', level: 95 },
-      { name: 'PostgreSQL', level: 90 },
+      { name: 'PostgreSQL / SQL', level: 90 },
       { name: 'Redis', level: 85 },
+      { name: 'Laravel / PHP', level: 88 },
     ],
   },
   {
     title: 'Frontend Development',
     skills: [
+      { name: 'JavaScript', level: 95 },
       { name: 'React', level: 92 },
       { name: 'Next.js', level: 90 },
+      { name: 'Tailwind CSS', level: 90 },
       { name: 'TypeScript', level: 88 },
       { name: 'Vue.js', level: 82 },
-      { name: 'JavaScript', level: 95 },
-      { name: 'Tailwind CSS', level: 90 },
     ],
   },
   {
     title: 'DevOps & Cloud',
     skills: [
+      { name: 'Azure', level: 92 },
       { name: 'Docker', level: 85 },
-      { name: 'Azure', level: 88 },
+      { name: 'CI/CD (GitHub Actions)', level: 85 },
+      { name: 'Heroku', level: 85 },
+      { name: 'Terraform / Bicep', level: 82 },
       { name: 'AWS', level: 80 },
-      { name: 'Heroku', level: 92 },
-      { name: 'CI/CD', level: 85 },
-      { name: 'Terraform', level: 78 },
+    ],
+  },
+  {
+    title: 'AI & Developer Tools',
+    skills: [
+      { name: 'AI API Integration', level: 88 },
+      { name: 'GitHub Copilot', level: 88 },
+      { name: 'Postman', level: 85 },
+      { name: 'Claude AI / Anthropic', level: 85 },
+      { name: 'OpenAI / GPT-4', level: 85 },
+      { name: 'Cursor AI', level: 85 },
+      { name: 'Prompt Engineering', level: 82 },
     ],
   },
 ]
 
 export const additionalSkills = {
-  paymentIntegration: [
+  integrations: [
+    'REST API Integration',
+    'Webhooks',
+    'JSON Payload Mapping',
+    'OpenAPI / Swagger',
+    'Event-driven Architecture',
     'Stripe Integration',
     'Wirecard',
-    'AI/ML Integration',
     'Microservices',
-    'Event-driven Architecture',
+    'WebSockets / Hotwire',
+    'WordPress API',
+    'Social Media APIs',
     'RSS Processing',
   ],
   leadership: [
@@ -212,15 +207,6 @@ export const featuredProjects = [
 			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display with WebSocket updates, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
 		technologies: ['Ruby on Rails', 'Stripe', 'WebSocket', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
 		url: 'https://github.com/Swakhar/qr-ordering',
-		date: '2025',
-	},
-  {
-		id: 4,
-		title: 'OnePager - AI Website Builder',
-		description:
-			'Single page website builder powered by AI with comprehensive editing options. Features AI-powered design commands, screenshot analysis, style transfer, and smart UX/UI suggestions. Includes multiple templates, visual editor with real-time preview, and one-click publishing.',
-		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Supabase'],
-		url: 'https://github.com/Swakhar/onepager-starter',
 		date: '2025',
 	},
 ]

@@ -87,10 +87,10 @@ export function Skills() {
 					className="mt-16 text-center"
 				>
 					<h3 className="text-2xl font-bold mb-6">
-						Payment & Integration Expertise
+						Integration Expertise
 					</h3>
 					<div className="flex flex-wrap justify-center gap-3 mb-8">
-						{additionalSkills.paymentIntegration.map((skill) => (
+						{additionalSkills.integrations.map((skill) => (
 							<span
 								key={skill}
 								className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium"

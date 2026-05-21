@@ -71,18 +71,6 @@ const projects = [
 		featured: false,
 		date: '2025',
 	},
-	{
-		id: 5,
-		title: 'Dimensional Shift Deluxe',
-		description:
-			'A 2D platformer game built with Phaser.js featuring multiple dimensions, challenging levels, and smooth gameplay mechanics. Players navigate through different dimensional planes to solve puzzles and overcome obstacles.',
-		image: '/api/placeholder/400/250',
-		technologies: ['Phaser.js', 'JavaScript', 'HTML5 Canvas', 'Game Development', '2D Graphics'],
-		githubUrl: 'https://github.com/Swakhar/dimensional_shift_deluxe',
-		liveUrl: null,
-		featured: false,
-		date: '2025',
-	},
 ]
 
 export function Projects() {

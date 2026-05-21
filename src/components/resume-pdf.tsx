@@ -17,7 +17,6 @@ import {
 } from '@/data/resume-data'
 import { sanitizeObjectForPDF } from '@/utils/pdf-helpers'
 
-// Sanitize all data for PDF generation to avoid font encoding issues
 const pdfPersonalInfo = sanitizeObjectForPDF(personalInfo)
 const pdfProfessionalSummary = sanitizeObjectForPDF(professionalSummary)
 const pdfExperiences = sanitizeObjectForPDF(experiences)
@@ -26,424 +25,403 @@ const pdfAdditionalSkills = sanitizeObjectForPDF(additionalSkills)
 const pdfFeaturedProjects = sanitizeObjectForPDF(featuredProjects)
 const pdfEducation = sanitizeObjectForPDF(education)
 
-// Styles for the PDF - Professional Design
+const NAVY = '#0f2951'
+const BLUE = '#2563eb'
+const LIGHT_BLUE = '#dbeafe'
+const BODY = '#374151'
+const MUTED = '#6b7280'
+const WHITE = '#ffffff'
+const CHIP_BG = '#f1f5f9'
+
 const styles = StyleSheet.create({
   page: {
     fontSize: 10,
-    paddingTop: 35,
-    paddingBottom: 45,
-    paddingHorizontal: 45,
-    lineHeight: 1.6,
-    color: '#1f2937',
-    backgroundColor: '#ffffff',
+    paddingTop: 36,
+    paddingBottom: 42,
+    paddingHorizontal: 44,
+    fontFamily: 'Helvetica',
+    color: BODY,
+    backgroundColor: WHITE,
+    lineHeight: 1.5,
   },
+
+  // ─── Header ───────────────────────────────────────────────────────────────
   header: {
-    marginBottom: 24,
-    paddingBottom: 16,
-    borderBottom: 3,
-    borderBottomColor: '#2563eb',
-    backgroundColor: '#f8fafc',
-    marginHorizontal: -20,
-    paddingHorizontal: 20,
-    paddingTop: 16,
+    marginBottom: 18,
+    paddingBottom: 14,
+    borderBottom: 2,
+    borderBottomColor: BLUE,
   },
   name: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: 18,
-    letterSpacing: 1,
+    fontSize: 24,
+    fontFamily: 'Helvetica-Bold',
+    color: NAVY,
+    letterSpacing: 0.5,
+    lineHeight: 1.2,
+    marginBottom: 6,
   },
   jobTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#374151',
-    marginBottom: 12,
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    fontSize: 10,
+    fontFamily: 'Helvetica',
+    color: MUTED,
+    letterSpacing: 2,
+    lineHeight: 1.3,
+    marginBottom: 10,
   },
-  contactInfo: {
+  contactRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    fontSize: 9.5,
-    color: '#6b7280',
-    gap: 6,
-    lineHeight: 1.4,
-  },
-  contactItem: {
-    marginRight: 14,
-    paddingRight: 14,
-    borderRight: 1,
-    borderRightColor: '#d1d5db',
-  },
-  contactItemLast: {
-    borderRight: 0,
-  },
-  link: {
-    color: '#2563eb',
-    textDecoration: 'none',
-  },
-  section: {
-    marginTop: 20,
-    marginBottom: 4,
-  },
-  sectionTitle: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: 10,
-    paddingBottom: 5,
-    borderBottom: 2,
-    borderBottomColor: '#3b82f6',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-  },
-  summary: {
-    fontSize: 10.5,
-    lineHeight: 1.7,
-    color: '#4b5563',
-    textAlign: 'justify',
-    paddingHorizontal: 4,
-  },
-  experienceItem: {
-    marginBottom: 16,
-    paddingLeft: 4,
-  },
-  experienceHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 5,
-    alignItems: 'baseline',
-  },
-  jobTitleText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: '#111827',
-    letterSpacing: 0.3,
-  },
-  company: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#2563eb',
+    gap: 0,
     marginBottom: 3,
   },
-  locationPeriod: {
+  contactSep: {
+    fontSize: 9,
+    color: MUTED,
+    marginHorizontal: 6,
+  },
+  contactText: {
+    fontSize: 9,
+    color: MUTED,
+  },
+  contactLink: {
+    fontSize: 9,
+    color: BLUE,
+    textDecoration: 'none',
+  },
+
+  // ─── Sections ─────────────────────────────────────────────────────────────
+  section: {
+    marginTop: 16,
+    marginBottom: 2,
+  },
+  sectionTitle: {
+    fontSize: 10,
+    fontFamily: 'Helvetica-Bold',
+    color: NAVY,
+    textTransform: 'uppercase',
+    letterSpacing: 1.2,
+    marginBottom: 6,
+    paddingBottom: 4,
+    borderBottom: 1.5,
+    borderBottomColor: BLUE,
+  },
+
+  // ─── Summary ──────────────────────────────────────────────────────────────
+  summary: {
+    fontSize: 10,
+    lineHeight: 1.7,
+    color: BODY,
+  },
+
+  // ─── Experience ───────────────────────────────────────────────────────────
+  expItem: {
+    marginBottom: 14,
+  },
+  expHeaderRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    fontSize: 9.5,
-    color: '#6b7280',
-    marginBottom: 8,
-    fontStyle: 'italic',
+    alignItems: 'baseline',
+    marginBottom: 1,
   },
-  bulletPoints: {
-    marginLeft: 14,
-    marginTop: 6,
+  expTitle: {
+    fontSize: 10.5,
+    fontFamily: 'Helvetica-Bold',
+    color: BODY,
   },
-  bulletPoint: {
+  expPeriod: {
+    fontSize: 9,
+    color: MUTED,
+    fontFamily: 'Helvetica-Oblique',
+  },
+  expCompanyRow: {
     flexDirection: 'row',
-    marginBottom: 4,
-    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+    marginBottom: 6,
   },
-  bullet: {
-    width: 6,
+  expCompany: {
     fontSize: 10,
-    marginRight: 8,
-    marginTop: 1,
-    color: '#2563eb',
-    fontWeight: 'bold',
+    fontFamily: 'Helvetica-Bold',
+    color: BLUE,
+  },
+  expLocation: {
+    fontSize: 9,
+    color: MUTED,
+    fontFamily: 'Helvetica-Oblique',
+  },
+  bulletList: {
+    marginLeft: 10,
+    marginBottom: 6,
+  },
+  bulletRow: {
+    flexDirection: 'row',
+    marginBottom: 3,
+  },
+  bulletDot: {
+    width: 10,
+    fontSize: 10,
+    color: BLUE,
+    marginTop: 0.5,
   },
   bulletText: {
     flex: 1,
-    fontSize: 10,
-    lineHeight: 1.6,
-    color: '#4b5563',
+    fontSize: 9.5,
+    lineHeight: 1.55,
+    color: BODY,
   },
-  technologies: {
+  chipRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginTop: 8,
-    gap: 5,
+    gap: 0,
+    marginTop: 4,
   },
-  tech: {
-    fontSize: 8.5,
-    backgroundColor: '#dbeafe',
-    color: '#1e40af',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 4,
-    marginRight: 5,
-    marginBottom: 5,
-    fontWeight: 'semibold',
-  },
-  skillsGrid: {
-    flexDirection: 'row',
-    gap: 12,
-    marginBottom: 12,
-  },
-  skillColumn: {
-    flex: 1,
-    backgroundColor: '#f9fafb',
-    padding: 10,
-    borderRadius: 4,
-    borderLeft: 3,
-    borderLeftColor: '#3b82f6',
-  },
-  skillCategory: {
-    marginBottom: 8,
-  },
-  skillCategoryTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    color: '#1e40af',
-    marginBottom: 8,
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-  },
-  skillItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 5,
-    fontSize: 9.5,
-    alignItems: 'center',
-  },
-  skillName: {
-    color: '#4b5563',
-    flex: 1,
-  },
-  skillLevel: {
-    color: '#2563eb',
-    fontWeight: 'bold',
-    fontSize: 9,
-    backgroundColor: '#dbeafe',
-    paddingHorizontal: 6,
+  chip: {
+    fontSize: 8,
+    backgroundColor: LIGHT_BLUE,
+    color: NAVY,
+    paddingHorizontal: 7,
     paddingVertical: 2,
     borderRadius: 3,
+    marginRight: 4,
+    marginBottom: 4,
+    fontFamily: 'Helvetica-Bold',
   },
-  additionalSkillsContainer: {
-    marginTop: 10,
-    backgroundColor: '#f9fafb',
-    padding: 10,
-    borderRadius: 4,
+
+  // ─── Skills (keyword lists — ATS friendly, no % bars) ─────────────────────
+  skillLine: {
+    flexDirection: 'row',
+    marginBottom: 5,
+    flexWrap: 'wrap',
   },
-  additionalSkillsRow: {
+  skillLabel: {
+    fontSize: 9.5,
+    fontFamily: 'Helvetica-Bold',
+    color: BODY,
+    marginRight: 4,
+  },
+  skillValue: {
+    fontSize: 9.5,
+    color: BODY,
+    flex: 1,
+    flexWrap: 'wrap',
+  },
+  tagRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 5,
+    gap: 0,
     marginBottom: 6,
   },
-  additionalSkill: {
-    fontSize: 8.5,
-    backgroundColor: '#d1fae5',
-    color: '#065f46',
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 4,
-    marginRight: 5,
-    marginBottom: 5,
-    fontWeight: 'semibold',
+  tag: {
+    fontSize: 8,
+    backgroundColor: CHIP_BG,
+    color: BODY,
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    borderRadius: 3,
+    marginRight: 4,
+    marginBottom: 4,
   },
+
+  // ─── Projects ─────────────────────────────────────────────────────────────
   projectItem: {
-    marginBottom: 14,
-    paddingLeft: 4,
-    borderLeft: 3,
-    borderLeftColor: '#93c5fd',
-    paddingBottom: 10,
+    marginBottom: 12,
+    paddingLeft: 10,
+    borderLeft: 2,
+    borderLeftColor: BLUE,
+    paddingBottom: 2,
+  },
+  projectHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+    marginBottom: 3,
   },
   projectTitle: {
-    fontSize: 11.5,
-    fontWeight: 'bold',
-    color: '#111827',
-    marginBottom: 4,
-    letterSpacing: 0.3,
+    fontSize: 10.5,
+    fontFamily: 'Helvetica-Bold',
+    color: BODY,
   },
-  projectDescription: {
-    fontSize: 10,
-    lineHeight: 1.6,
-    color: '#4b5563',
-    marginBottom: 6,
+  projectDate: {
+    fontSize: 9,
+    color: MUTED,
+    fontFamily: 'Helvetica-Oblique',
+  },
+  projectDesc: {
+    fontSize: 9.5,
+    lineHeight: 1.55,
+    color: BODY,
+    marginBottom: 4,
   },
   projectUrl: {
-    fontSize: 9,
-    color: '#2563eb',
-    marginBottom: 6,
-    fontStyle: 'italic',
+    fontSize: 8.5,
+    color: BLUE,
+    fontFamily: 'Helvetica-Oblique',
+    marginBottom: 4,
+    textDecoration: 'none',
   },
-  educationItem: {
-    marginBottom: 6,
-    paddingLeft: 4,
-  },
+
+  // ─── Education ────────────────────────────────────────────────────────────
   degree: {
-    fontSize: 11.5,
-    fontWeight: 'bold',
-    color: '#111827',
+    fontSize: 10.5,
+    fontFamily: 'Helvetica-Bold',
+    color: BODY,
     marginBottom: 2,
   },
   institution: {
-    fontSize: 10.5,
-    color: '#2563eb',
-    marginTop: 3,
-    fontWeight: 'semibold',
+    fontSize: 10,
+    fontFamily: 'Helvetica-Bold',
+    color: BLUE,
+    marginBottom: 2,
   },
-  educationDetails: {
-    fontSize: 9.5,
-    color: '#6b7280',
-    marginTop: 3,
-    fontStyle: 'italic',
-  },
-  twoColumnSection: {
-    flexDirection: 'row',
-    gap: 15,
-  },
-  leftColumn: {
-    flex: 2,
-  },
-  rightColumn: {
-    flex: 1,
-  },
-  divider: {
-    marginVertical: 8,
-    borderBottom: 1,
-    borderBottomColor: '#e5e7eb',
+  eduDetails: {
+    fontSize: 9,
+    color: MUTED,
+    fontFamily: 'Helvetica-Oblique',
   },
 })
+
+function SectionTitle({ children }: { children: string }) {
+  return <Text style={styles.sectionTitle}>{children}</Text>
+}
+
+function Bullet({ text }: { text: string }) {
+  return (
+    <View style={styles.bulletRow}>
+      <Text style={styles.bulletDot}>•</Text>
+      <Text style={styles.bulletText}>{text}</Text>
+    </View>
+  )
+}
+
+function Chip({ label }: { label: string }) {
+  return <Text style={styles.chip}>{label}</Text>
+}
 
 export function ResumePDF() {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* Header */}
+
+        {/* ── Header ── */}
         <View style={styles.header}>
           <Text style={styles.name}>{pdfPersonalInfo.name}</Text>
-          <Text style={styles.jobTitle}>{pdfPersonalInfo.title}</Text>
-          <View style={styles.contactInfo}>
-            <Text style={styles.contactItem}>{pdfPersonalInfo.email}</Text>
-            <Text style={styles.contactItem}>{pdfPersonalInfo.phone}</Text>
-            <Text style={styles.contactItem}>{pdfPersonalInfo.location}</Text>
+          <Text style={styles.jobTitle}>{pdfPersonalInfo.title.toUpperCase()}</Text>
+
+          <View style={styles.contactRow}>
+            <Text style={styles.contactText}>{pdfPersonalInfo.email}</Text>
+            <Text style={styles.contactSep}>·</Text>
+            <Text style={styles.contactText}>{pdfPersonalInfo.phone}</Text>
+            <Text style={styles.contactSep}>·</Text>
+            <Text style={styles.contactText}>{pdfPersonalInfo.location}</Text>
           </View>
-          <View style={[styles.contactInfo, { marginTop: 4 }]}>
-            <Link style={[styles.contactItem, styles.link]} src={`https://${pdfPersonalInfo.linkedin}`}>
+
+          <View style={styles.contactRow}>
+            <Link style={styles.contactLink} src={`https://${pdfPersonalInfo.linkedin}`}>
               {pdfPersonalInfo.linkedin}
             </Link>
-            <Link style={[styles.contactItem, styles.link]} src={`https://${pdfPersonalInfo.github}`}>
+            <Text style={styles.contactSep}>·</Text>
+            <Link style={styles.contactLink} src={`https://${pdfPersonalInfo.github}`}>
               {pdfPersonalInfo.github}
             </Link>
-            <Link style={[styles.contactItem, styles.link]} src={`${pdfPersonalInfo.portfolio}`}>
+            <Text style={styles.contactSep}>·</Text>
+            <Link style={styles.contactLink} src={pdfPersonalInfo.portfolio}>
               {pdfPersonalInfo.portfolio}
             </Link>
           </View>
         </View>
 
-        {/* Professional Summary */}
+        {/* ── Professional Summary ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Professional Summary</Text>
+          <SectionTitle>Professional Summary</SectionTitle>
           <Text style={styles.summary}>{pdfProfessionalSummary}</Text>
         </View>
 
-        {/* Professional Experience */}
+        {/* ── Professional Experience ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Professional Experience</Text>
+          <SectionTitle>Professional Experience</SectionTitle>
           {pdfExperiences.map((exp) => (
-            <View key={exp.id} style={styles.experienceItem}>
-              <Text style={styles.jobTitleText}>{exp.title}</Text>
-              <Text style={styles.company}>{exp.company}</Text>
-              <View style={styles.locationPeriod}>
-                <Text>{exp.location}</Text>
-                {exp.period && <Text>{exp.period}</Text>}
+            <View key={exp.id} style={styles.expItem}>
+              <View style={styles.expHeaderRow}>
+                <Text style={styles.expTitle}>{exp.title}</Text>
+                {exp.period && <Text style={styles.expPeriod}>{exp.period}</Text>}
               </View>
-              <View style={styles.bulletPoints}>
-                {exp.description.map((item, index) => (
-                  <View key={index} style={styles.bulletPoint}>
-                    <Text style={styles.bullet}>•</Text>
-                    <Text style={styles.bulletText}>{item}</Text>
-                  </View>
+              <View style={styles.expCompanyRow}>
+                <Text style={styles.expCompany}>{exp.company}</Text>
+                <Text style={styles.expLocation}>{exp.location}</Text>
+              </View>
+              <View style={styles.bulletList}>
+                {exp.description.map((item, i) => (
+                  <Bullet key={i} text={item} />
                 ))}
               </View>
-              <View style={styles.technologies}>
+              <View style={styles.chipRow}>
                 {exp.technologies.map((tech) => (
-                  <Text key={tech} style={styles.tech}>
-                    {tech}
-                  </Text>
+                  <Chip key={tech} label={tech} />
                 ))}
               </View>
             </View>
           ))}
         </View>
 
-        {/* Skills Section */}
+        {/* ── Technical Skills (ATS-friendly keyword lists — no % bars) ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Technical Skills</Text>
-          <View style={styles.skillsGrid}>
-            {pdfSkillCategories.map((category) => (
-              <View key={category.title} style={styles.skillColumn}>
-                <View style={styles.skillCategory}>
-                  <Text style={styles.skillCategoryTitle}>{category.title}</Text>
-                  {category.skills.map((skill) => (
-                    <View key={skill.name} style={styles.skillItem}>
-                      <Text style={styles.skillName}>{skill.name}</Text>
-                      <Text style={styles.skillLevel}>{skill.level}%</Text>
-                    </View>
-                  ))}
-                </View>
-              </View>
-            ))}
-          </View>
-
-          {/* Additional Skills */}
-          <View style={styles.additionalSkillsContainer}>
-            <Text style={styles.skillCategoryTitle}>Payment & Integration Expertise</Text>
-            <View style={styles.additionalSkillsRow}>
-              {pdfAdditionalSkills.paymentIntegration.map((skill) => (
-                <Text key={skill} style={styles.additionalSkill}>
-                  {skill}
-                </Text>
-              ))}
-            </View>
-          </View>
-
-          <View style={styles.additionalSkillsContainer}>
-            <Text style={styles.skillCategoryTitle}>Business & Leadership</Text>
-            <View style={styles.additionalSkillsRow}>
-              {pdfAdditionalSkills.leadership.map((skill) => (
-                <Text key={skill} style={styles.additionalSkill}>
-                  {skill}
-                </Text>
-              ))}
-            </View>
-          </View>
-        </View>
-
-        {/* Featured Projects */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Featured Projects</Text>
-          {pdfFeaturedProjects.map((project) => (
-            <View key={project.id} style={styles.projectItem}>
-              <Text style={styles.projectTitle}>{project.title}</Text>
-              <Text style={styles.projectDescription}>{project.description}</Text>
-              <Link style={styles.projectUrl} src={project.url}>
-                {project.url}
-              </Link>
-              <View style={styles.technologies}>
-                {project.technologies.map((tech) => (
-                  <Text key={tech} style={styles.tech}>
-                    {tech}
-                  </Text>
-                ))}
-              </View>
+          <SectionTitle>Technical Skills</SectionTitle>
+          {pdfSkillCategories.map((cat) => (
+            <View key={cat.title} style={styles.skillLine}>
+              <Text style={styles.skillLabel}>{cat.title}:</Text>
+              <Text style={styles.skillValue}>
+                {cat.skills.map((s) => s.name).join(', ')}
+              </Text>
             </View>
           ))}
-        </View>
 
-        {/* Education */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Education</Text>
-          <View style={styles.educationItem}>
-            <Text style={styles.degree}>{pdfEducation.degree}</Text>
-            <Text style={styles.institution}>{pdfEducation.institution}</Text>
-            <Text style={styles.educationDetails}>
-              {pdfEducation.location} • {pdfEducation.period}
+          <View style={[styles.skillLine, { marginTop: 4 }]}>
+            <Text style={styles.skillLabel}>Integrations:</Text>
+            <Text style={styles.skillValue}>
+              {pdfAdditionalSkills.integrations.join(', ')}
+            </Text>
+          </View>
+
+          <View style={styles.skillLine}>
+            <Text style={styles.skillLabel}>Leadership:</Text>
+            <Text style={styles.skillValue}>
+              {pdfAdditionalSkills.leadership.join(', ')}
             </Text>
           </View>
         </View>
+
+        {/* ── Featured Projects ── */}
+        <View style={styles.section}>
+          <SectionTitle>Featured Projects</SectionTitle>
+          {pdfFeaturedProjects.map((project) => (
+            <View key={project.id} style={styles.projectItem}>
+              <View style={styles.projectHeaderRow}>
+                <Text style={styles.projectTitle}>{project.title}</Text>
+                <Text style={styles.projectDate}>{project.date}</Text>
+              </View>
+              <Text style={styles.projectDesc}>{project.description}</Text>
+              <Link style={styles.projectUrl} src={project.url}>
+                {project.url}
+              </Link>
+              <View style={styles.chipRow}>
+                {project.technologies.map((tech) => (
+                  <Chip key={tech} label={tech} />
+                ))}
+              </View>
+            </View>
+          ))}
+        </View>
+
+        {/* ── Education ── */}
+        <View style={styles.section}>
+          <SectionTitle>Education</SectionTitle>
+          <Text style={styles.degree}>{pdfEducation.degree}</Text>
+          <Text style={styles.institution}>{pdfEducation.institution}</Text>
+          <Text style={styles.eduDetails}>
+            {pdfEducation.location} · {pdfEducation.period}
+          </Text>
+        </View>
+
       </Page>
     </Document>
   )
