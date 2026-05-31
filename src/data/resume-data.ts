@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Software Engineer with 9+ years of experience architecting scalable web applications across fintech, e-commerce, and AI-powered SaaS platforms. Currently leading a team of 5 engineers at Finlink GmbH, specializing in Ruby on Rails full-stack development with deep expertise in microservices, cloud infrastructure (Azure, Docker), React, and Next.js — delivering 50%+ database performance gains and 80% workflow automation improvements. Actively integrating modern AI tools and LLM APIs into production systems, bridging strong backend engineering with the latest in AI-assisted development.`
+export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience building production AI/LLM-integrated applications, scalable APIs, and full-stack features across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara). Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements and complex API integrations; previously built the Rails backend for an AI-powered conversational platform at mercury.ai. React-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
 
 export const experiences = [
   {
@@ -46,9 +46,9 @@ export const experiences = [
     location: 'Remote',
     period: 'Nov 2020 - Aug 2021',
     description: [
-      'Architected and maintained complete backend infrastructure using Ruby on Rails for AI-powered chatbot platform',
+      'Architected production Ruby on Rails backend for AI-powered conversational platform, integrating NLP and AI model APIs to process thousands of daily chatbot interactions with sub-second response times',
       'Developed dynamic Vue.js chat widgets with extensive customization options, supporting multiple design frameworks',
-      'Collaborated with AI/ML teams to integrate natural language processing capabilities into conversational interfaces',
+      'Led Rails-side integration of NLP model APIs, collaborating with AI/ML team to ship reliable, tested conversational AI features to production — maintaining end-to-end RSpec coverage for AI response flows',
     ],
     technologies: ['Ruby on Rails', 'Vue.js', 'REST APIs', 'JavaScript', 'AI Integration'],
   },
@@ -101,6 +101,7 @@ export const skillCategories = [
       { name: 'RSpec', level: 88 },
       { name: 'Capybara', level: 82 },
       { name: 'Turbo / Stimulus', level: 85 },
+      { name: 'pry / byebug', level: 85 },
       { name: 'Redis', level: 85 },
       { name: 'Python / FastAPI', level: 85 },
       { name: 'Laravel / PHP', level: 88 },
@@ -132,13 +133,14 @@ export const skillCategories = [
   {
     title: 'AI & Developer Tools',
     skills: [
-      { name: 'AI API Integration', level: 88 },
-      { name: 'GitHub Copilot', level: 88 },
-      { name: 'Postman', level: 85 },
+      { name: 'LLM API Integration', level: 88 },
       { name: 'Claude AI / Anthropic', level: 85 },
       { name: 'OpenAI / GPT-4', level: 85 },
-      { name: 'Cursor AI', level: 85 },
+      { name: 'Google Gemini Flash', level: 83 },
       { name: 'Prompt Engineering', level: 82 },
+      { name: 'GitHub Copilot', level: 88 },
+      { name: 'Cursor AI', level: 85 },
+      { name: 'Postman', level: 85 },
     ],
   },
 ]
@@ -175,7 +177,7 @@ export const featuredProjects = [
     id: 1,
     title: 'Castlumen - AI Content Repurposing Platform',
     description:
-      'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Built complete full-stack solution with Python FastAPI backend, Next.js frontend, integrated multiple AI services, Stripe payments, and WordPress publishing automation.',
+      'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Integrated OpenAI GPT-4 API for AI-driven content transformation, built Python FastAPI backend and Next.js frontend, automated Stripe payments, and WordPress publishing pipeline.',
     technologies: [
       'Next.js',
       'Python',
@@ -213,6 +215,14 @@ export const featuredProjects = [
 		url: 'https://github.com/Swakhar/qr-ordering',
 		date: '2025',
 	},
+  {
+    id: 4,
+    title: 'Basha AI — Language Learning App',
+    description:
+      'AI-powered Bangla-to-German language learning mobile app. Built Duolingo-style learning features — vocabulary, exercises, and progress tracking — with an AI tutor powered by Google Gemini Flash for personalised, conversational learning. Designed for Play Store and App Store launch.',
+    technologies: ['Google Gemini Flash', 'AI Integration', 'Mobile', 'Language Learning'],
+    date: '2026',
+  },
 ]
 
 export const education = {
