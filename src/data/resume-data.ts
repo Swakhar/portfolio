@@ -129,6 +129,7 @@ export const skillCategories = [
       { name: 'Heroku', level: 85 },
       { name: 'Terraform / Bicep', level: 82 },
       { name: 'AWS', level: 80 },
+      { name: 'Git', level: 90 },
     ],
   },
   {
@@ -178,7 +179,7 @@ export const featuredProjects = [
     id: 1,
     title: 'Castlumen - AI Content Repurposing Platform',
     description:
-      'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Integrated OpenAI GPT-4 API for AI-driven content transformation, built Python FastAPI backend and Next.js frontend, automated Stripe payments, and WordPress publishing pipeline.',
+      'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Integrated OpenAI GPT-4 API for AI-driven content transformation, built an async Python FastAPI backend and Next.js frontend, automated Stripe payments, and WordPress publishing pipeline.',
     technologies: [
       'Next.js',
       'Python',
