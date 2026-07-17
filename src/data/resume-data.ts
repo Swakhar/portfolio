@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience building production AI/LLM-integrated applications, scalable APIs, and full-stack features across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara). Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements and complex API integrations; previously built the Rails backend for an AI-powered conversational platform at mercury.ai. React-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
+export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience building production AI/LLM-integrated applications, scalable PostgreSQL-backed APIs, and full-stack features across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara) and disciplined Git-based version control. Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements and complex API integrations; previously built the Rails backend for an AI-powered conversational platform at mercury.ai. React-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
 
 export const experiences = [
   {
@@ -22,7 +22,7 @@ export const experiences = [
     location: 'Remote (Berlin, Germany)',
     period: 'Sept 2021 - Present',
     description: [
-      'Led technical architecture and sprint planning for a team of 5, translating complex business requirements into well-structured, maintainable Rails solutions with robust test coverage',
+      'Led technical architecture and sprint planning for a team of 5, translating complex business requirements into well-structured, maintainable Rails solutions with robust test coverage (unit, integration, and end-to-end via RSpec/Capybara)',
       'Improved database performance by 50% by implementing Redis caching strategies, cutting financing query response times significantly',
       'Architected and delivered end-to-end API integrations with Europace and Ehyp, including webhook handling, JSON payload mapping, and event-driven data pipelines — processing high-volume financial transactions in compliance with German regulatory standards',
       'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting, ensuring regulatory compliance',
@@ -111,6 +111,7 @@ export const skillCategories = [
   {
     title: 'Frontend Development',
     skills: [
+      { name: 'HTML / CSS', level: 92 },
       { name: 'JavaScript', level: 95 },
       { name: 'React', level: 92 },
       { name: 'Next.js', level: 90 },
