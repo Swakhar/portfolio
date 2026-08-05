@@ -24,7 +24,7 @@ export const experiences = [
     description: [
       'Led technical architecture and sprint planning for a team of 5, translating complex business requirements into well-structured, maintainable Rails solutions with robust test coverage (unit, integration, and end-to-end via RSpec/Capybara)',
       'Improved database performance by 50% by implementing Redis caching strategies, cutting financing query response times significantly',
-      'Architected and delivered end-to-end API integrations with Europace and Ehyp, including webhook handling, JSON payload mapping, and event-driven data pipelines — processing high-volume financial transactions in compliance with German regulatory standards',
+      'Architected and delivered end-to-end API integrations with Europace and Ehyp, including secure authentication, webhook handling, JSON payload mapping, and event-driven data pipelines — processing high-volume financial transactions in compliance with German regulatory standards',
       'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting, ensuring regulatory compliance',
       'Automated loan application workflows via background job processing (cron-based), reducing manual processing overhead by 80%',
       'Mentored junior engineers through code reviews and pair programming, establishing team-wide coding standards and reducing technical debt through proactive refactoring',
