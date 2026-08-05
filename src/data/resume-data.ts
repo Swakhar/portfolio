@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience building production AI/LLM-integrated applications, scalable PostgreSQL-backed APIs, and full-stack features across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara) and disciplined Git-based version control. Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements and complex API integrations; previously built the Rails backend for an AI-powered conversational platform at mercury.ai. React-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
+export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience building production AI/LLM-integrated applications, scalable PostgreSQL-backed APIs, and full-stack features — including Hotwire-driven UIs (Turbo, Stimulus, TurboFrames) — across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted, conversational features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara) and disciplined Git-based version control. Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements and complex API integrations; previously built the Rails backend for an AI-powered conversational platform serving thousands of daily interactions at mercury.ai. React/Vue.js-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
 
 export const experiences = [
   {
@@ -101,7 +101,7 @@ export const skillCategories = [
       { name: 'RESTful APIs', level: 95 },
       { name: 'RSpec / BDD', level: 88 },
       { name: 'Capybara', level: 82 },
-      { name: 'Turbo / Stimulus', level: 85 },
+      { name: 'Turbo / Stimulus / TurboFrames', level: 85 },
       { name: 'pry / byebug', level: 85 },
       { name: 'Redis', level: 85 },
       { name: 'Python / FastAPI', level: 85 },
@@ -213,7 +213,7 @@ export const featuredProjects = [
 		id: 3,
 		title: 'QR Ordering System',
 		description:
-			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display using Turbo Streams and Stimulus controllers, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
+			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display using Turbo Streams, TurboFrames, and Stimulus controllers, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
 		technologies: ['Ruby on Rails', 'Turbo', 'Stimulus', 'Stripe', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
 		url: 'https://github.com/Swakhar/qr-ordering',
 		date: '2025',
