@@ -367,7 +367,7 @@ export function ResumePDF() {
         <View style={styles.section}>
           <SectionTitle>Technical Skills</SectionTitle>
           {pdfSkillCategories.map((cat) => (
-            <View key={cat.title} style={styles.skillLine}>
+            <View key={cat.title} style={styles.skillLine} wrap={false}>
               <Text style={styles.skillLabel}>{cat.title}:</Text>
               <Text style={styles.skillValue}>
                 {cat.skills.map((s) => s.name).join(', ')}
@@ -375,14 +375,14 @@ export function ResumePDF() {
             </View>
           ))}
 
-          <View style={[styles.skillLine, { marginTop: 4 }]}>
+          <View style={[styles.skillLine, { marginTop: 4 }]} wrap={false}>
             <Text style={styles.skillLabel}>Integrations:</Text>
             <Text style={styles.skillValue}>
               {pdfAdditionalSkills.integrations.join(', ')}
             </Text>
           </View>
 
-          <View style={styles.skillLine}>
+          <View style={styles.skillLine} wrap={false}>
             <Text style={styles.skillLabel}>Leadership:</Text>
             <Text style={styles.skillValue}>
               {pdfAdditionalSkills.leadership.join(', ')}
@@ -394,7 +394,7 @@ export function ResumePDF() {
         <View style={styles.section}>
           <SectionTitle>Featured Projects</SectionTitle>
           {pdfFeaturedProjects.map((project) => (
-            <View key={project.id} style={styles.projectItem}>
+            <View key={project.id} style={styles.projectItem} wrap={false}>
               <View style={styles.projectHeaderRow}>
                 <Text style={styles.projectTitle}>{project.title}</Text>
                 <Text style={styles.projectDate}>{project.date}</Text>
