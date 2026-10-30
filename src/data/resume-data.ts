@@ -60,8 +60,8 @@ export const experiences = [
     location: 'Berlin, Germany',
     period: 'Nov 2019 - Oct 2020',
     description: [
-      'Executed comprehensive Rails framework migration from version 4 to 6, ensuring zero-downtime deployment',
-      'Implemented ActiveStorage for modern file handling, replacing legacy attachment systems',
+      'Executed comprehensive Rails framework migration from version 4 to 6 and deployed to AWS EC2 via a CI/CD pipeline, ensuring zero-downtime deployment',
+      'Implemented ActiveStorage with AWS S3 backing for modern file handling, replacing legacy attachment systems',
       'Led frontend modernization initiative, transitioning from ERB templates to React with Redux state management',
       'Improved code quality and eliminated legacy technical debt through systematic refactoring, applying modern Rails conventions and design patterns throughout',
     ],
