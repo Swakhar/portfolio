@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Software Engineer (Ruby on Rails) with 9+ years of experience architecting secure, scalable full-stack systems for fintech and SaaS platforms — from PostgreSQL-backed microservices to AI/LLM-integrated features and cloud infrastructure on Azure and AWS. Known for taking ambiguous, high-stakes problems — regulated financial APIs, production AI workflows, legacy system modernization — and owning them end-to-end: architecture, Terraform/Bicep infrastructure-as-code, Rails/API implementation, and production observability (Elasticsearch, Kibana, Sentry). Currently leads technical architecture and mentors a team of 5 engineers at Finlink GmbH, a German fintech company, delivering 50%+ database performance improvements and compliance-critical API integrations with regulated banking partners. Publishes open-source infrastructure (the \`belay\` Ruby gem for durable AI-agent execution) and has independently designed, built, and deployed multiple production AI-integrated platforms end-to-end. Based in Germany, fully remote and async for 5+ years.`
+export const professionalSummary = `Senior Software Engineer (Ruby on Rails) with 9+ years of experience architecting secure, scalable full-stack systems for fintech and SaaS platforms — from PostgreSQL-backed microservices to AI/LLM-integrated features and cloud infrastructure on Azure and AWS. Known for taking ambiguous, high-stakes problems — regulated financial APIs, production AI workflows, legacy system modernization — and owning them end-to-end: architecture, Terraform/Bicep infrastructure-as-code, Rails/API implementation, and production observability (Elasticsearch, Kibana, Sentry). Currently at Finlink GmbH, a German fintech company, delivering 50%+ database performance improvements and compliance-critical API integrations with regulated banking partners while providing technical guidance to fellow engineers; previously led the payment integration team at WellDev. Publishes open-source infrastructure (the \`belay\` Ruby gem for durable AI-agent execution) and has independently designed, built, and deployed multiple production AI-integrated platforms end-to-end. Based in Germany, fully remote and async for 5+ years.`
 
 export const experiences = [
   {
@@ -22,12 +22,12 @@ export const experiences = [
     location: 'Remote (Berlin, Germany)',
     period: 'Sept 2021 - Present',
     description: [
-      'Led technical architecture and sprint planning for a team of 5, translating complex business requirements into well-structured, maintainable Rails solutions with robust test coverage (unit, integration, and end-to-end via RSpec/Capybara)',
+      'Translated complex business requirements into well-structured, maintainable Rails solutions with robust test coverage (unit, integration, and end-to-end via RSpec/Capybara), providing technical guidance to fellow engineers on integration architecture and code quality',
       'Improved database performance by 50% by implementing Redis caching strategies, cutting financing query response times significantly',
       'Architected and delivered end-to-end API integrations with Europace and Ehyp, including secure authentication, webhook handling, JSON payload mapping, and event-driven data pipelines — processing high-volume financial transactions in compliance with German regulatory standards',
       'Established Azure container infrastructure with NAT gateway configuration for secure ING API whitelisting, ensuring regulatory compliance',
       'Automated loan application workflows via background job processing (cron-based), reducing manual processing overhead by 80%',
-      'Mentored junior engineers through code reviews and pair programming, establishing team-wide coding standards and reducing technical debt through proactive refactoring',
+      'Supported fellow engineers through code reviews and pair programming, helping maintain team coding standards and reducing technical debt through proactive refactoring',
     ],
     technologies: [
       'Ruby on Rails',
@@ -74,7 +74,7 @@ export const experiences = [
     location: 'Dhaka, Bangladesh',
     period: 'Feb 2016 - Oct 2019',
     description: [
-      'Integrated secure payment processing with Wirecard and Stripe across high-volume B2B SaaS commerce platforms, ensuring PCI compliance and fraud protection',
+      'Led the payment integration team as directly assigned team lead, integrating secure payment processing with Wirecard and Stripe across high-volume B2B SaaS commerce platforms, ensuring PCI compliance and fraud protection',
       'Developed robust RESTful APIs serving both web and mobile applications using Ruby, handling thousands of daily transactions',
       'Built comprehensive travel booking platform frontend using React and Redux, integrating complex search and filtering capabilities',
       'Created reusable Ruby gem library for consistent styling across multiple microservices, improving development efficiency',
