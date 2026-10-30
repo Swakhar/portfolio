@@ -12,7 +12,7 @@ export const personalInfo = {
   portfolio: 'https://swakhar-dey-portfolio.vercel.app',
 }
 
-export const professionalSummary = `Senior Ruby on Rails Engineer with 9+ years of experience designing secure, scalable RESTful APIs, optimizing PostgreSQL-backed data models for performance, and building production AI/LLM-integrated applications and full-stack features — including Hotwire-driven UIs (Turbo, Stimulus, TurboFrames) — across SaaS platforms. Specialises in integrating LLM APIs (OpenAI GPT-4, Anthropic Claude, Google Gemini) into Rails backends — designing AI-assisted, conversational features with a focus on reliability, latency, and cost — while maintaining rigorous automated testing standards (RSpec, Capybara) and disciplined Git-based version control with CI/CD workflows. Currently leading a team of 5 engineers at Finlink GmbH, delivering 50%+ database performance improvements via Redis caching at scale and complex microservices API integrations; previously built the Rails backend for an AI-powered conversational platform serving thousands of daily interactions at mercury.ai. Based in Germany (CET), JavaScript/React/Vue.js-proficient, fully remote and async for 5+ years, comfortable owning features from design through production.`
+export const professionalSummary = `Senior Software Engineer (Ruby on Rails) with 9+ years of experience architecting secure, scalable full-stack systems for fintech and SaaS platforms — from PostgreSQL-backed microservices to AI/LLM-integrated features and cloud infrastructure on Azure and AWS. Known for taking ambiguous, high-stakes problems — regulated financial APIs, production AI workflows, legacy system modernization — and owning them end-to-end: architecture, Terraform/Bicep infrastructure-as-code, Rails/API implementation, and production observability (Elasticsearch, Kibana, Sentry). Currently leads technical architecture and mentors a team of 5 engineers at Finlink GmbH, a German fintech company, delivering 50%+ database performance improvements and compliance-critical API integrations with regulated banking partners. Publishes open-source infrastructure (the \`belay\` Ruby gem for durable AI-agent execution) and has independently designed, built, and deployed multiple production AI-integrated platforms end-to-end. Based in Germany, fully remote and async for 5+ years.`
 
 export const experiences = [
   {
@@ -65,7 +65,7 @@ export const experiences = [
       'Led frontend modernization initiative, transitioning from ERB templates to React with Redux state management',
       'Improved code quality and eliminated legacy technical debt through systematic refactoring, applying modern Rails conventions and design patterns throughout',
     ],
-    technologies: ['Ruby on Rails', 'React', 'Redux', 'ActiveStorage', 'ERB', 'PostgreSQL'],
+    technologies: ['Ruby on Rails', 'React', 'Redux', 'ActiveStorage', 'ERB', 'PostgreSQL', 'AWS'],
   },
   {
     id: 4,
@@ -131,6 +131,8 @@ export const skillCategories = [
       { name: 'Terraform / Bicep', level: 82 },
       { name: 'AWS', level: 80 },
       { name: 'Git', level: 90 },
+      { name: 'Elasticsearch / Kibana', level: 80 },
+      { name: 'Sentry', level: 82 },
     ],
   },
   {
@@ -162,6 +164,10 @@ export const additionalSkills = {
     'WordPress API',
     'Social Media APIs',
     'RSS Processing',
+    'Payment Gateway Integration',
+    'Loyalty / Rewards Systems',
+    'Affiliate Marketing Systems',
+    'Email Marketing Automation',
   ],
   leadership: [
     'Technical Leadership',
@@ -178,6 +184,24 @@ export const additionalSkills = {
 export const featuredProjects = [
   {
     id: 1,
+    title: 'Belay — Durable Execution for AI Agents in Rails (Open-Source)',
+    description:
+      'Designed and published an open-source Ruby gem providing durable, crash-recoverable execution for AI agent workflows in Rails. Every model and tool call is checkpointed as a Postgres row, so a crashed run resumes from its last step instead of restarting from scratch. Built human-approval gates with auto-settling rules, cross-model replay/diffing, and a mountable Rails engine dashboard with run timelines and cost tracking — ships with Anthropic, OpenAI, and Gemini provider adapters.',
+    technologies: [
+      'Ruby',
+      'Rails Engine',
+      'PostgreSQL',
+      'AI Agents',
+      'Anthropic API',
+      'OpenAI API',
+      'Gemini API',
+      'Open Source',
+    ],
+    url: 'https://github.com/Swakhar/belay',
+    date: '2026',
+  },
+  {
+    id: 2,
     title: 'Castlumen - AI Content Repurposing Platform',
     description:
       'Worked as lead/senior engineer with remote freelancing team to build SaaS platform that transforms content across 7 social media formats using AI. Integrated OpenAI GPT-4 API for AI-driven content transformation, built an async Python FastAPI backend and Next.js frontend, automated Stripe payments, and WordPress publishing pipeline.',
@@ -194,36 +218,39 @@ export const featuredProjects = [
     date: '2025',
   },
   {
-    id: 2,
-    title: 'Meindokan - Online Grocery Store',
+    id: 3,
+    title: 'Meindokan - Online Grocery E-Commerce Platform',
     description:
-      'CTO and Co-founder of online grocery store platform. Built entire architecture, implemented core parts in backend (Laravel) and frontend (Next.js), and managed remote freelancing team. Developed complete e-commerce solution with real-time inventory, delivery management, payment processing, and customer portal.',
+      'CTO and Co-founder of a full-scale e-commerce platform, architected and built independently end-to-end. Designed the core order orchestration system coordinating inventory, delivery, and payments as one pipeline; implemented a custom payment gateway integration, a points-based customer loyalty/rewards system, an affiliate referral program, and automated email-marketing workflows. Set up CI/CD with GitHub Actions for automated deployment, and led a remote freelancing team on frontend (Next.js) delivery.',
     technologies: [
       'Next.js',
       'Laravel',
       'PHP',
       'E-Commerce',
-			'Payment Gateway',
-			'Business Management',
+      'Payment Gateway',
+      'CI/CD',
+      'Loyalty / Rewards System',
+      'Affiliate System',
+      'Email Marketing',
     ],
     url: 'https://meindokan.com',
     date: '2025',
   },
   {
-		id: 3,
-		title: 'QR Ordering System',
-		description:
-			'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display using Turbo Streams, TurboFrames, and Stimulus controllers, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
-		technologies: ['Ruby on Rails', 'Turbo', 'Stimulus', 'Stripe', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
-		url: 'https://github.com/Swakhar/qr-ordering',
-		date: '2025',
-	},
-  {
     id: 4,
-    title: 'Basha AI — Language Learning App',
+    title: 'QR Ordering System',
     description:
-      'AI-powered Bangla-to-German language learning mobile app. Built Duolingo-style learning features — vocabulary, exercises, and progress tracking — with an AI tutor powered by Google Gemini Flash for personalised, conversational learning. Designed for Play Store and App Store launch.',
-    technologies: ['Google Gemini Flash', 'AI Integration', 'Mobile', 'Language Learning'],
+      'Modern QR-based restaurant ordering system built with Ruby on Rails. Features contactless ordering via QR codes with multi-language support (DE, EN, TR, IT), real-time kitchen display using Turbo Streams, TurboFrames, and Stimulus controllers, Stripe payment integration with split payments, and comprehensive analytics dashboard.',
+    technologies: ['Ruby on Rails', 'Turbo', 'Stimulus', 'Stripe', 'PostgreSQL', 'Tailwind CSS', 'Hotwire'],
+    url: 'https://github.com/Swakhar/qr-ordering',
+    date: '2025',
+  },
+  {
+    id: 5,
+    title: 'Deutsch Bridge AI — Language Learning App',
+    description:
+      'Designed, built, and deployed an AI-powered Bangla-to-German language learning app end-to-end, solo — architecture, backend, frontend, and release orchestration. Duolingo-style learning features (vocabulary, exercises, progress tracking) paired with an AI tutor powered by Google Gemini Flash for personalised, conversational practice. Live now on Android and web; iOS release currently in App Store review.',
+    technologies: ['Google Gemini Flash', 'AI Integration', 'Mobile', 'Android', 'Language Learning'],
     date: '2026',
   },
 ]
